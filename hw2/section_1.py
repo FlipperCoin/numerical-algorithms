@@ -42,12 +42,30 @@ x = pinv(A_train) @ b_train
 predC = np.sign(A_train @ x)
 trueC = b_train
 acc = np.mean(predC == trueC) * 100
-print(f'Accuracy={acc}%, ({(1 - acc / 100) * N} wrong examples)')
+print(f'Accuracy={acc}%, ({np.around((1 - acc / 100) * N)} wrong examples)')
 
 predC = np.sign(A_test @ x)
 trueC = b_test
 acc = np.mean(predC == trueC) * 100
-print(f'Accuracy={acc}%, ({(1 - acc / 100) * N} wrong examples)')
-#
-# plt.imshow((A_test[529, :-1]).reshape(28, 28), cmap='Greys')
-# plt.show()
+print(f'Accuracy={acc}%, ({np.around((1 - acc / 100) * N)} wrong examples)')
+
+plt.imshow((A_test[63, :-1]).reshape(28, 28), cmap='Greys')
+plt.axis('off')
+plt.savefig("63.png")
+plt.show()
+plt.imshow((A_test[139, :-1]).reshape(28, 28), cmap='Greys')
+plt.axis('off')
+plt.savefig("139.png")
+plt.show()
+plt.imshow((A_test[188, :-1]).reshape(28, 28), cmap='Greys')
+plt.axis('off')
+plt.savefig("188.png")
+plt.show()
+plt.imshow((A_test[290, :-1]).reshape(28, 28), cmap='Greys')
+plt.axis('off')
+plt.savefig("290.png")
+plt.show()
+plt.imshow((A_test[341, :-1]).reshape(28, 28), cmap='Greys')
+plt.axis('off')
+plt.savefig("341.png")
+plt.show()

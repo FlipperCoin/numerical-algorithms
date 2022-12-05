@@ -34,15 +34,15 @@ b_test = b_all[N:2*N, :]
 # Solve LS with train
 x = pinv(A_train)@b_train
 
-predC = np.sign(A_train@x)
+predC = np.sign(A_train @ x)
 trueC = b_train
-acc = np.mean(predC == trueC)*100
-print(f'Accuracy={acc}%, ({(1-acc/100)*N} wrong examples)')
+acc = np.mean(predC == trueC) * 100
+print(f'Accuracy={acc}%, ({np.around((1 - acc / 100) * N)} wrong examples)')
 
-predC = np.sign(A_test@x)
+predC = np.sign(A_test @ x)
 trueC = b_test
-acc = np.mean(predC == trueC)*100
-print(f'Accuracy={acc}%, ({(1-acc/100)*N} wrong examples)')
+acc = np.mean(predC == trueC) * 100
+print(f'Accuracy={acc}%, ({np.around((1 - acc / 100) * N)} wrong examples)')
 
 # plt.imshow(imagesPerDigit2[:,:,60], cmap='Greys')
 # plt.show()
